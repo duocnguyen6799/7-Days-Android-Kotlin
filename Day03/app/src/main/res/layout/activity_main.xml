@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivShop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dm_20dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/tiCost"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tiCost"
+            app:srcCompat="@drawable/ic_baseline_shopping_basket_24" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiCost"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dm_20dp"
+            android:layout_marginTop="@dimen/dm_20dp"
+            app:layout_constraintStart_toEndOf="@+id/ivShop"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRateService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dm_20dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/tvRateService"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivShop"
+            app:layout_constraintTop_toTopOf="@id/tvRateService"
+            app:srcCompat="@drawable/ic_baseline_rate_review_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRateService"
+            style="@style/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dm_20dp"
+            android:layout_marginTop="@dimen/dm_20dp"
+            android:text="@string/how_the_service"
+            app:layout_constraintStart_toEndOf="@id/ivRateService"
+            app:layout_constraintTop_toBottomOf="@id/tiCost" />
+
+        <RadioGroup
+            android:id="@+id/radioRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm_20dp"
+            app:layout_constraintStart_toStartOf="@id/tvRateService"
+            app:layout_constraintTop_toBottomOf="@id/tvRateService">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sv_amazing" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sv_good" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sv_okay" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRoundTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dm_20dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/tvRoundTip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvRoundTip"
+            app:srcCompat="@drawable/ic_baseline_shopping_basket_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRoundTip"
+            style="@style/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dm_20dp"
+            android:layout_marginTop="@dimen/dm_20dp"
+            android:text="@string/round_up_tip"
+            app:layout_constraintStart_toEndOf="@id/ivRoundTip"
+            app:layout_constraintTop_toBottomOf="@id/radioRate" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dm_20dp"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@id/tvRoundTip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvRoundTip" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dm_20dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/calculate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRoundTip" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTipAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm_20dp"
+            android:layout_marginEnd="@dimen/dm_20dp"
+            android:text="@string/tip_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCalculate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
